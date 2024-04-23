@@ -1,4 +1,5 @@
 import "./App.css";
+import News from "./components/News";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           </div>
         </div>
       </header>
+      <News />
     </div>
   );
 }
