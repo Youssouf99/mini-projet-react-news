@@ -1,26 +1,52 @@
-# Getting Started
+# News API
 
-### Reference Documentation
+Ce projet est une application qui utilise une API d'actualités pour récupérer les dernières nouvelles et les afficher.
 
-For further reference, please consider the following sections:
+## Technologies utilisées
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.2.5/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.2.5/maven-plugin/reference/html/#build-image)
-* [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/3.2.5/reference/htmlsingle/index.html#actuator)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.2.5/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.2.5/reference/htmlsingle/index.html#using.devtools)
-* [Validation](https://docs.spring.io/spring-boot/docs/3.2.5/reference/htmlsingle/index.html#io.validation)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.2.5/reference/htmlsingle/index.html#web)
+- Java
+- Spring Boot
+- MapStruct
+- Lombok
+- Maven
 
-### Guides
+## Configuration
 
-The following guides illustrate how to use some features concretely:
+Assurez-vous d'avoir Maven installé sur votre machine.
 
-* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Validation](https://spring.io/guides/gs/validating-form-input/)
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+1. Clonez ce dépôt sur votre machine locale :
+    ```
+    git clone https://github.com/votre-utilisateur/news-api.git
+    ```
+
+2. Assurez-vous d'avoir configuré les variables d'environnement suivantes dans un fichier `.env` à la racine du projet :
+    ```
+    API_URL=https://example.com/api/news
+    API_KEY=votre_clé_api
+    ```
+
+## Exécution du projet
+
+1. Accédez au répertoire du projet :
+    ```
+    cd news-api
+    ```
+
+2. Compilez et exécutez l'application à l'aide de Maven :
+    ```
+    mvn spring-boot:run
+    ```
+
+3. L'application sera accessible à l'adresse : [http://localhost:8080](http://localhost:8080)
+
+## Fonctionnalités
+
+- Récupération des dernières nouvelles à partir de l'API d'actualités.
+- Affichage des nouvelles sous forme de liste.
+
+## Auteur
+
+[Youssouf]
+
+
 
