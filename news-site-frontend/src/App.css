@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-gray-main {
+  background-color: #f3f4f6; /* Choisissez la couleur de fond grise de votre choix */
+}
