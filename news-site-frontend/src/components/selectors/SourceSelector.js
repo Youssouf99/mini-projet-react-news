@@ -37,8 +37,6 @@ const SourceSelector = ({ onSelect }) => {
 
     element === "Toutes les sources" ? onSelect("") : onSelect(element);
     // onSelect(event);
-
-    // onSelect(event);
   };
 
   return (
