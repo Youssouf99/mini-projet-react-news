@@ -1,0 +1,14 @@
+.gradient-background {
+  background-image: linear-gradient(to right, #24cfe8, #f4d92c);
+}
+
+.gradient-color {
+  color: linear-gradient(to right, #24cfe8, #f4d92c);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #24cfe8, #f4d92c);
+  -webkit-background-clip: text; /* Utiliser le dégradé comme clip pour le texte */
+  -webkit-text-fill-color: transparent; /* Rendre le texte transparent */
+  /* filter: invert(1) brightness(2);  */
+}
