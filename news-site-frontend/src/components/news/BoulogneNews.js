@@ -3,6 +3,8 @@ import Article from "./Article";
 import axios from "axios";
 import DefaultPagination from "../paginations/DefaultPagination";
 import { Alert, Spinner } from "@material-tailwind/react";
+import SockJS from "sockjs-client";
+import { Stomp } from "@stomp/stompjs";
 
 const BoulogneNews = () => {
   const [news, setNews] = useState([]);
@@ -10,10 +12,32 @@ const BoulogneNews = () => {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 10;
+  const [stompClient, setStompClient] = useState(null);
 
   useEffect(() => {
+    connectWebSocket();
     fetchNews();
   }, [currentPage]);
+
+  const connectWebSocket = () => {
+    const socket = new SockJS("http://localhost:8080/ws");
+    const client = Stomp.over(socket);
+    client.connect(
+      {},
+      () => {
+        client.subscribe("/topic/articles", (message) => {
+          const updatedArticles = JSON.parse(message.body);
+          console.log("updatedArticles", updatedArticles);
+          setNews(updatedArticles);
+        });
+        setStompClient(client);
+      },
+      (error) => {
+        console.error("WebSocket connection error:", error);
+        setError("Erreur lors de la connexion au serveur WebSocket.");
+      }
+    );
+  };
 
   const fetchNews = async () => {
     setIsLoading(true);
@@ -29,6 +53,15 @@ const BoulogneNews = () => {
       setIsLoading(false);
     }
   };
+
+  // Assurez-vous de fermer la connexion WebSocket lors de la destruction du composant
+  useEffect(() => {
+    return () => {
+      if (stompClient) {
+        stompClient.disconnect();
+      }
+    };
+  }, [stompClient]);
 
   return (
     <div className="container mx-auto">
