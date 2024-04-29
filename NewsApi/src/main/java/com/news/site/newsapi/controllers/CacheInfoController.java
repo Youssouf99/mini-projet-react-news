@@ -1,34 +1,25 @@
 package com.news.site.newsapi.controllers;
 
-import com.news.site.newsapi.dtos.ArticleDTO;
-import com.news.site.newsapi.services.NewsService;
+import com.news.site.newsapi.services.CacheInfoService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
-import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/news")
+@RequestMapping("api/cache")
 @AllArgsConstructor
-public class NewsController {
-    private final NewsService newsService;
+public class CacheInfoController {
+    private final CacheInfoService cacheInfoService;
 
 
-    @GetMapping
-    public ResponseEntity<List<ArticleDTO>> getLatestNews() {
-        List<ArticleDTO> articles = newsService.fetchLatestNews();
-        if (articles.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(articles, HttpStatus.OK);
+    @GetMapping("/{cacheName}")
+    public Map<String, Object> getCacheData(@PathVariable String cacheName) {
+        return cacheInfoService.getCacheData(cacheName);
     }
-
 
 
 }
