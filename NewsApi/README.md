@@ -41,11 +41,13 @@ API_KEY=votre_clé_api
    
 4. **L'application sera accessible à l'adresse :** [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
-   ![Interface Swagger](/src/main/resources/static/images/img1.png)
+   ![Interface Swagger](https://github.com/Youssouf99/news-site/blob/main/NewsApi/src/main/resources/static/img1.png)
 
    Vous pouvez également accéder à la documentation JSON de l'API à l'adresse [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs).
 
-   ![Documentation JSON de l'API](/src/main/resources/static/images/img2.png)
+   ![Documentation JSON de l'API](https://github.com/Youssouf99/news-site/blob/main/NewsApi/src/main/resources/static/img2.png)
+
+   ![Documentation JSON de l'API](https://github.com/Youssouf99/news-site/blob/main/NewsApi/src/main/resources/static/img3.png)
 
 ## Technologies utilisées
 
