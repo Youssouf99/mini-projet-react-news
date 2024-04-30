@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# News API Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+News API Frontend est l'interface utilisateur de l'application qui permet aux utilisateurs de consulter les actualités récupérées par le backend et de les afficher de manière conviviale.
 
-## Available Scripts
+## Fonctionnalités
 
-In the project directory, you can run:
+- Affichage des dernières actualités récupérées par l'API backend.
+- Possibilité de filtrer les actualités par source.
+- Options de tri pour organiser les actualités par date ou pertinence.
+- Gestion des erreurs avec des messages d'alerte en cas de problème de chargement des données.
 
-### `npm start`
+## Configuration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Avant d'exécuter l'application frontend, assurez-vous d'avoir Node.js et npm installés sur votre machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clonez ce dépôt sur votre machine locale :
 
-### `npm test`
+   ```bash
+   https://github.com/Youssouf99/news-site
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
 
-### `npm run build`
+2. Accédez au répertoire du projet :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd news-api-frontend
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Installez les dépendances du projet :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+## Exécution du projet
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Une fois que vous avez installé les dépendances et configuré l'URL de l'API backend, vous pouvez exécuter l'application frontend.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Lancez l'application en mode développement :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. L'application sera accessible dans votre navigateur à l'adresse : [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## Technologies utilisées
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React
+- Axios
+- Material-UI
+- Tailwind CSS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Structure du projet
 
-### Code Splitting
+Le projet est organisé de la manière suivante :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+news-api-frontend/
+  ├── public/            # Fichiers publics
+  ├── src/               # Code source de l'application
+  │   ├── components/    # Composants réutilisables
+  │   ├── pages/         # Composants de page
+  │   ├── services/      # Services pour les appels API
+  │   ├── styles/        # Fichiers de style
+  │   └── App.js         # Composant racine de l'application
+  ├── .env               # Configuration des variables d'environnement
+  ├── package.json       # Dépendances du projet
+  └── README.md          # Documentation du projet
+```
 
-### Analyzing the Bundle Size
+## Auteur
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Youssouf]

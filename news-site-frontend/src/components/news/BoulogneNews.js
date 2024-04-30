@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Article from "./Article";
 import axios from "axios";
 import DefaultPagination from "../paginations/DefaultPagination";
@@ -14,20 +14,14 @@ const BoulogneNews = () => {
   const totalPages = 10;
   const [stompClient, setStompClient] = useState(null);
 
-  useEffect(() => {
-    connectWebSocket();
-    fetchNews();
-  }, [currentPage]);
-
-  const connectWebSocket = () => {
-    const socket = new SockJS("http://localhost:8080/ws");
+  const connectWebSocket = useCallback(() => {
+    const socket = new SockJS(`http://localhost:8080/ws`);
     const client = Stomp.over(socket);
     client.connect(
       {},
       () => {
         client.subscribe("/topic/articles", (message) => {
           const updatedArticles = JSON.parse(message.body);
-          console.log("updatedArticles", updatedArticles);
           setNews(updatedArticles);
         });
         setStompClient(client);
@@ -37,9 +31,9 @@ const BoulogneNews = () => {
         setError("Erreur lors de la connexion au serveur WebSocket.");
       }
     );
-  };
+  }, []);
 
-  const fetchNews = async () => {
+  const fetchNews = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -52,7 +46,12 @@ const BoulogneNews = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [currentPage]);
+
+  useEffect(() => {
+    connectWebSocket();
+    fetchNews();
+  }, [connectWebSocket, fetchNews]);
 
   // Assurez-vous de fermer la connexion WebSocket lors de la destruction du composant
   useEffect(() => {

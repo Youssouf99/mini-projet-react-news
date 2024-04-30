@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import Article from "./Article";
 import axios from "axios";
 import SourceSelector from "../selectors/SourceSelector";
@@ -12,11 +12,7 @@ const TeslaNews = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchNews();
-  }, [selectedSource, sortOrder]);
-
-  const fetchNews = async () => {
+  const fetchNews = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -32,7 +28,11 @@ const TeslaNews = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [selectedSource, sortOrder]);
+
+  useEffect(() => {
+    fetchNews();
+  }, [fetchNews]);
 
   // Utiliser useMemo pour mettre en cache le résultat de fetchNews
   const cacheNews = useMemo(() => {
