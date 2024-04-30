@@ -51,6 +51,30 @@ Une fois que vous avez installé les dépendances et configuré l'URL de l'API b
 - Material-UI
 - Tailwind CSS
 
+## Aperçu de l'Application
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img1.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img2.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img3.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img4.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img5.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img6.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img7.png)
+
+   ![Page d'Accueil](https://github.com/Youssouf99/news-site/blob/main/news-site-frontend/src/assets/images/img8.png)
+
+
+
+
+
+
+
+
 ## Structure du projet
 
 Le projet est organisé de la manière suivante :
@@ -72,3 +96,6 @@ news-api-frontend/
 ## Auteur
 
 [Youssouf]
+
+
+
